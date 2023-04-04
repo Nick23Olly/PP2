@@ -16,8 +16,7 @@ public class App {
             "Até que um dia, reparei numa cena\n" +
             "E pensei em talvez existir um porém\n", 
             "\nO que pensar?\n", 
-            "nao existe um porem", 
-            "prosseguir e ir alem",
+            new String[]{"nao existe um porem","prosseguir e ir alem"},
             escaneador); //passando o escaneador como parâmetro para todos os capítulos
 
         capitulo capB1 = new capitulo(
@@ -29,8 +28,7 @@ public class App {
             "E da promessa de me entregar a ninguém\n" +
             "Resolvi fazer jus e esquecer de um provável porém\n", 
             null,
-            null,
-            null, //passando o parâmetro como nulo
+            null, //passando o parâmetro como nulo 
             escaneador);
 
         capitulo capB2 = new capitulo(
@@ -43,8 +41,7 @@ public class App {
             "E o sorriso, ah…\\n" +
             "Por ele me faria o prisioneiro se ela fosse a Lisbela\n", 
             "\nO que pensar?\n", 
-            "a vida não e uma novela", 
-            "quem e ela?",
+            new String []{"a vida não e uma novela","quem e ela?"},
             escaneador);
          
         capitulo capC1 = new capitulo(
@@ -55,9 +52,8 @@ public class App {
             "E ele me lembrou que me encontrar ainda estou tentando\n" +
             "Então passado alguns segundo me peguei cogitando\n" +
             "Talvez a melhor opção seja seguir SOZINHO o meu plano\n", 
+            null,
             null, 
-            null,
-            null,
             escaneador);
 
         capitulo capC2 = new capitulo(
@@ -69,26 +65,25 @@ public class App {
             "Reflexivo acendi um cigarro\n" +
             "Até que ouvi gritarem um nome\n" +
             "Estela\n",
-            null, 
-            null, 
             null,
+            null, 
             escaneador);
     
         capA.mostrar();
         int escolha = capA.escolher(); //guada a escolha na variável de tipo int
 
-        if (escolha == 1){ //comparando a escolha      
+        if (escolha == 0){ //comparando a escolha      
             capB1.mostrar();  
         }
 
-        else if (escolha == 2){ //.equals é uma maneira de comparar string já que esse tipo não é primitivo não podendo assim usar ==
+        else if (escolha == 1){ //.equals é uma maneira de comparar string já que esse tipo não é primitivo não podendo assim usar ==
             capB2.mostrar();
             escolha = capB2.escolher(); 
 
-            if (escolha == 1){        
+            if (escolha == 0){        
                 capC1.mostrar();
             }
-            else if(escolha == 2){
+            else if(escolha == 1){
                 capC2.mostrar();
             }
             }
