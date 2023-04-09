@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class capitulo {
@@ -6,19 +7,19 @@ public class capitulo {
    int alteracaoCoragem;
    String texto;
    String pergunta;
-   String[] escolhas;
+   ArrayList <Escolha> escolhas;
    Scanner escaneador;
 
    capitulo (String título, Personagem personagem, int alteracaoCoragem, 
-   String texto, String pergunta, String[] escolhas, Scanner escaneador){ //construtor com parâmetros
+   String texto, String pergunta, Scanner escaneador){ //construtor com parâmetros
 
     this.título = título;
     this.personagem = personagem;
     this.alteracaoCoragem = alteracaoCoragem;
     this.texto = texto;
     this.pergunta = pergunta;
-    this.escolhas = escolhas;
     this.escaneador = escaneador;
+    this.escolhas = new Arraylist <Escolha>();
     
 }
 
@@ -30,8 +31,8 @@ public class capitulo {
         System.out.println(this.texto);  
         
         if (escolhas != null){
-            for (String escolha : escolhas) {
-                System.out.println("-" + escolha);
+            for (Escolha escolha : escolhas) {
+                System.out.println("-" + escolha.texto);
             }
     }
         System.out.println();
@@ -46,8 +47,8 @@ public class capitulo {
             String escolhaDigitada = escaneador.nextLine(); //capturar o que o usuário escolheu/escreveu
             System.out.println();
                 
-                for (int i = 0; i < escolhas.length; i++) {
-                    if (escolhaDigitada.equals(escolhas[i])){
+                for (int i = 0; i < escolhas.size(); i++) {
+                    if (escolhaDigitada.equals(escolhas.get(i).texto)){ // get (i) é ppelo fato de usar-se arraylist então para acessar a posição usamos ele e.texto para comparar a escolha digitada com o texto da escolha que está lá
                     idescolha = i;
                 }
                 }

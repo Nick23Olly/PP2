@@ -16,7 +16,6 @@ public class App {
             "Até que um dia, reparei numa cena\n" +
             "E pensei em talvez existir um porém\n", 
             "\nO que pensar?\n", 
-            new String[]{"nao existe um porem","prosseguir e ir alem"},
             escaneador); //passando o escaneador como parâmetro para todos os capítulos
 
         capitulo capB1 = new capitulo(
@@ -28,7 +27,6 @@ public class App {
             "E da promessa de me entregar a ninguém\n" +
             "Resolvi fazer jus e esquecer de um provável porém\n", 
             null,
-            null, //passando o parâmetro como nulo 
             escaneador);
 
         capitulo capB2 = new capitulo(
@@ -41,7 +39,6 @@ public class App {
             "E o sorriso, ah…\\n" +
             "Por ele me faria o prisioneiro se ela fosse a Lisbela\n", 
             "\nO que pensar?\n", 
-            new String []{"a vida não e uma novela","quem e ela?"},
             escaneador);
          
         capitulo capC1 = new capitulo(
@@ -53,7 +50,6 @@ public class App {
             "Então passado alguns segundo me peguei cogitando\n" +
             "Talvez a melhor opção seja seguir SOZINHO o meu plano\n", 
             null,
-            null, 
             escaneador);
 
         capitulo capC2 = new capitulo(
@@ -61,14 +57,18 @@ public class App {
             Narciso,
             15, 
             "E como diria Baco\n" + 
-            "\n\"Quem é ela? Quem é ela?\"\n" +
+            "\"Quem é ela? Quem é ela?\"\n" +
             "Reflexivo acendi um cigarro\n" +
             "Até que ouvi gritarem um nome\n" +
             "Estela\n",
             null,
-            null, 
             escaneador);
-    
+        
+        capA.escolhas.add(new Escolha("nao existe um porem", capB1));
+        capA.escolhas.add(new Escolha("prosseguir e ir alem", capB2));
+        capB2.escolhas.add(new Escolha("a vida não e uma novela", capC1));
+        capB2.escolhas.add(new Escolha("quem e ela?", capC2)); 
+
         capA.mostrar();
         int escolha = capA.escolher(); //guada a escolha na variável de tipo int
 
