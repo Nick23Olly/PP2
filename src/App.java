@@ -69,28 +69,28 @@ public class App {
         capB2.escolhas.add(new Escolha("a vida não e uma novela", capC1));
         capB2.escolhas.add(new Escolha("quem e ela?", capC2)); 
 
-        capA.mostrar();
-        int escolha = capA.escolher(); //guada a escolha na variável de tipo int
+        capitulo raiz = capA;
+        raiz.mostrar();
 
-        if (escolha == 0){ //comparando a escolha      
-            capB1.mostrar();  
-        }
-
-        else if (escolha == 1){ //.equals é uma maneira de comparar string já que esse tipo não é primitivo não podendo assim usar ==
-            capB2.mostrar();
-            escolha = capB2.escolher(); 
-
-            if (escolha == 0){        
-                capC1.mostrar();
-            }
-            else if(escolha == 1){
-                capC2.mostrar();
-            }
-            }
-
-        else{
-            System.out.println("\nOpção incorreta");
-        }
         escaneador.close();
+    }
 }
-}
+//if (escolha == 0){ //comparando a escolha      
+  //  capB1.mostrar();  
+//}
+
+// else if (escolha == 1){ //.equals é uma maneira de comparar string já que esse tipo não é primitivo não podendo assim usar ==
+ //   capB2.mostrar();
+   // escolha = capB2.escolher(); 
+
+ //   if (escolha == 0){        
+   //     capC1.mostrar();
+    //}
+    //else if(escolha == 1){
+      //  capC2.mostrar();
+    //}
+    //}
+
+//else{
+  //  System.out.println("\nOpção incorreta");
+//     }

@@ -7,7 +7,7 @@ public class capitulo {
    int alteracaoCoragem;
    String texto;
    String pergunta;
-   ArrayList <Escolha> escolhas;
+   ArrayList<Escolha> escolhas;
    Scanner escaneador;
 
    capitulo (String título, Personagem personagem, int alteracaoCoragem, 
@@ -19,8 +19,7 @@ public class capitulo {
     this.texto = texto;
     this.pergunta = pergunta;
     this.escaneador = escaneador;
-    this.escolhas = new Arraylist <Escolha>();
-    
+    this.escolhas = new ArrayList<Escolha>();   
 }
 
     void mostrar (){ //método void sem retorno para mostrar as atribuições de e em cada cap.
@@ -30,13 +29,15 @@ public class capitulo {
         this.personagem.alterarCoragem(this.alteracaoCoragem);
         System.out.println(this.texto);  
         
-        if (escolhas != null){
+        if (this.escolhas.size() != 0){ //se tiver escolhas elas seram mostradas
             for (Escolha escolha : escolhas) {
                 System.out.println("-" + escolha.texto);
             }
-    }
+            int idEscolha = escolher (); //e irá executar o método escolher. ele irá retornar um id de uma escolha
+            this.escolhas.get(idEscolha).proximo.mostrar(); //o id é capturado, a escolha é acessada pega o cap para qual ela aponta e pede para
+            } 
         System.out.println();
-}
+    }
 
     int escolher (){
         int idescolha = -1; //um valor para representar um caso de erro
@@ -54,4 +55,5 @@ public class capitulo {
                 }
             }}
         return idescolha;
-    }}
+    }
+}
